@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Red&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我是小小红鸟的个人网站">
+<meta name="keywords" content="Red,我是小小红鸟">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Red&#39;s Blog">
+<meta property="og:url" content="RedBird233.github.io/index.html">
+<meta property="og:site_name" content="Red&#39;s Blog">
+<meta property="og:description" content="我是小小红鸟的个人网站">
+<meta property="og:locale" content="cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Red&#39;s Blog">
+<meta name="twitter:description" content="我是小小红鸟的个人网站">
+  
+    <link rel="alternative" href="/atom.xml" title="Red&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  
+    <link rel="stylesheet" href="/lib/gitalk/gitalk.css">
+    <script src="/lib/gitalk/gitalk.min.js"></script>
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Red</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">Red</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="http://RedBird233.github.io">博客首页</a></li>
+                        
+                            <li><a  href="/playlist">瑞德歌单</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                            <li><a  href="/categories/Monthly-Diary">月刊记事</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="/不告诉你233" title="mail">mail</a>
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/RedBird233" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="/不告诉你" title="weibo">weibo</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="/暂无" title="zhihu">zhihu</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Monthly-Diary/" style="font-size: 10px;">Monthly-Diary</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://redbird233.github.io/Blogs/Liblog">LiBlog</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">Red</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Red</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Red</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Red</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://RedBird233.github.io">博客首页</a></li>
+                
+                    <li><a href="/playlist">瑞德歌单</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                    <li><a href="/categories/Monthly-Diary">月刊记事</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="/不告诉你233" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/RedBird233" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="/不告诉你" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="/暂无" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/6/" class="article-date">
+      <time datetime="2021-08-19T02:33:00.719Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/6/">休更了，休更了！</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>吾之时间多乎哉？不多也！</p>
+<p>哪有时间净鼓弄博客这些乱七八糟的。<br>月刊记事的乙篇更新起来遥遥无期。<br>虽然一开始定下每月写一篇的目标很美好。<br>但实现起来也并非容易。太容易分心。亦不利于学习。<br>更不更也就这样了。<br>待到瑞德辛丑一十八年（二零二一年）高考后咱们再会。</p>
+<p>俟高考之后，<br>愿君得以于清华园内观荷月；<br>于未名湖畔赏春光，<br>于恩来像下闲闲坐。      </p>
+<p>Red</p>
+<p>公历2020年3月29日<br>瑞德庚子一十七年三月初六日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/5/" class="article-date">
+      <time datetime="2021-08-19T02:32:02.372Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/5/">博客原来是存放技术性文章的地方的吗？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>如题。<br>逛了许多博客，<br>全是拿博客存放各种技术类文章的。<br>跟我课本上描述的博客完全不一样啊。。。</p>
+<p>Red</p>
+<p>公历 2020年3月16日<br>瑞德庚子一十七年二月廿三日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/4/" class="article-date">
+      <time datetime="2021-08-19T02:15:59.894Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/4/">论如何把一手好牌打得稀烂</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>你们可能不知道只用578万赢到20块是什么概念</p>
+<p>我们一般只会用两个字来形容这种人：土块！</p>
+<p>我经常说一句话，当年陈刀仔他能用20块赢到3700万，我Red用3700万赢到20块不是问题。<br>埋伏他一手，这个题不能答，这个题不用答，我死定了。<br>反手给一个超级加倍，闷声发大财。老师也超级加倍？但是不用怕，老师的题赢不了我。<br>五六七八九十，两个炸，很牛逼这个题，如果把这个X换成Y，我这个答案将绝杀，但是换不得。<br>单写一个解，傻～逼，直接把分送走了。<br>走他一排列顶他。答题快点，；老师，老师你答案都不要吗？<br>五六七八九十。解错了，应该证明的。</p>
+<p>给老师倒杯茶好吧，老师给你倒一杯卡布奇诺。</p>
+<p>给老师倒一杯卡布奇诺！开始你的考题秀，考他考他。漂亮！</p>
+<p>数学最低你能秒我？你能秒杀我？！你今天用数学成绩把我秒了，我！当！场！就把这个电脑屏幕吃掉！！！</p>
+<p>Red</p>
+<p>瑞德 一十七年二月七日<br>西曆 2020年2月29日</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/2/" class="article-date">
+      <time datetime="2021-08-19T02:15:59.891Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/2/">朕总想和大伙说些什么。</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>宣旨！<br>嗻！<br>众臣听旨！<br>朕！大纠结！钦此！<br>当朝我同学，统共几十位，朕不得不粉了亿位<br>看看这亿个人吧，哪个不是绘画能手，哪个不是PV大佬！<br>他们触了，朕的心要碎了。<br>B站7位UID交到朕的手里，却搞成了这个样子。<br>朕是痛心疾首，朕有罪于B站<br>愧对碧诗，愧对陈睿，朕恨不得罢免自己！<br>还有你们，虽然各个冠冕堂皇的关注我，你们就那么干净吗？那么干净吗？<br>啊♂<br>朕知道，你们有的人比这亿个人更大触，更大触，更更更更更大触<br>朕劝你们一句，都把自己的心肺肠子翻出来，晒一晒，洗一洗，拾掇拾掇！<br>朕刚注册的时候，以为B站最难的是答答答答答题<br>朕答了了了了题，发现B站最难得的是投投投投投稿<br>朕投了视视视视视频，粉丝数，粉丝数，又成了Red的心头之患<br>朕现在越来越清楚了<br>Red的心头之患不在B站，而是在这里！就是在这磁盘C！磁盘D！磁盘E！<br>就在朕的关注列表和粉丝当中！<br>你们这儿触一点儿，Red心里就碎一片！<br>你们要是全触了，Red心里就会全碎了！就会揭竿而起！<br>让新人死无葬身之地啊！<br>啊♂<br>想想吧<br>B站萌新小红鸟<br>注册了B站都几年啦?<br>全废了！<br>忘啦?忘啦？<br>某些大触XXX<br>全烂啦<br>还坐在电脑屏幕后边，天天的盯着你们那！<br>啊<br>朕已经三分三秒没有合眼了<br>老想着和大伙说些什么<br>可是话，总得有个头啊<br>想来想去只有四个字<br>口口口口<br>这四个字，说说容易，身体力行又何其难！<br>这四个字，是朕苦心熬出来的，从弹幕里挖出来的<br>记着 从今日起 此殿改为<br>口口口口口殿！<br>都好好看看<br>你们都抬起头来好好看看 想想自己<br>都给朕看半个时辰！</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/3/" class="article-date">
+      <time datetime="2021-08-19T02:15:59.887Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/3/">最近心情不好。</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>RT<br>感觉现在学习压力蛮大的。<br>自己又不安分，总想试试别的东西。<br>然而最后什么也没学到。学习这方面倒是被我整的挺惨烈。<br>唉</p>
+<p>2019.10.20<br>Red</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/08/19/1/" class="article-date">
+      <time datetime="2021-08-19T02:15:59.885Z" itemprop="datePublished">2021-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/19/1/">你好，世界！</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Hello World！<br>欢迎你来到Red的小站！本站创立于二零一九年八月<br>好吧！就写这么多了！<br>待我在摸索摸索。。。<br>此站点仍在建设中！功能没法用是正常情况。。。。233<br>2019.8 Red</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2021 Red
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
